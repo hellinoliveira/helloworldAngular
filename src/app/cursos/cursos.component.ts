@@ -1,3 +1,4 @@
+import { CursosService } from './cursos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,15 +10,17 @@ export class CursosComponent implements OnInit {
 
   nomePortal: string;
 
-  cursos: string[] = ['PHP', 'Java', 'Angular', 'AWS'];
+  cursos: string[];
 
-  constructor() {
-      this.nomePortal = "https://hellinenathy.herokuapp.com/index.html"
+  constructor(cursosService: CursosService) {
+    this.nomePortal = "https://hellinenathy.herokuapp.com/index.html"
 
-      for (let i=0; i<this.cursos.length; i++){
-        let curso = this.cursos[i];
-      }
-   }
+    this.cursos = cursosService.getCursos();
+    // for (let i=0; i<this.cursos.length; i++){
+    //   let curso = this.cursos[i];
+    // }
+
+  }
 
   ngOnInit() {
   }
