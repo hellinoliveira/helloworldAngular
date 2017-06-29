@@ -9,13 +9,16 @@ import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { CursosModule } from './cursos/cursos.module';
 import { MeuPrimeiro3Component } from './meu-primeiro3/meu-primeiro3.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { AlertModule } from 'ng2-bootstrap';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponent,
     MeuPrimeiro2Component,
-    MeuPrimeiro3Component
+    MeuPrimeiro3Component,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,

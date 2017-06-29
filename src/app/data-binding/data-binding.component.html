@@ -1,0 +1,37 @@
+<section class="property-binding">
+  <article>
+    <h3>Class and Style Binding</h3>
+
+    <select #class (change)="0">
+      <option value="alert-success">Success</option>
+      <option value="alert-info">Info</option>
+      <option value=alert-warning>Warning</option>
+      <option value="alert-danger">Error</option>
+    </select>
+
+    <div class="alert {{ class.value}}" role="alert">This div should have the color of the dropdown value</div>
+
+    <div class="alert" role="alert" [class.alert-success]="class.value == 'alert-success'">Success</div>
+    <div class="alert" role="alert" [class.alert-info]="class.value == 'alert-info'">Info</div>
+    <div class="alert" role="alert" [class.alert-warning]="class.value == 'alert-warning'">Warning</div>
+    <div class="alert" role="alert" [class.alert-danger]="class.value == 'alert-danger'">Error</div>
+
+    <br>
+    <div class="alert alert-danger" role="alert" [style.display]="class.value == 'alert-danger' ? 'block': 'none'">This text should only appear if is an error alert.</div>
+  </article>
+
+
+
+  <article>
+    <h3>Data-Binding-Interpolation!</h3>
+    <p>My website: {{ url }}</p>
+    <p>SUM 1+1 = {{ 1+1 }} </p>
+    <p>SUM 1+1 != {{ 1+ 1 + getValue() }} </p>
+    <p>Do u Like Angular? {{ getLikeAngular && angularCourse }} </p>
+  </article>
+
+  <article>
+    <img src="{{ urlImage }}">
+    <img [src]="urlImage">
+  </article>
+</section>
