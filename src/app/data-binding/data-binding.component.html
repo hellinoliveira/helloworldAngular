@@ -1,3 +1,22 @@
+<section>
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="clickedButton()" class="btn btn-primary" type="btn btn-primary">Click Here!</button>
+
+      <input type="text" (keyup)="onKeyUp($event)" #inputField (keyup.enter)="saveNewValue(inputField.value)" (blur)="saveNewValue($event.target.value)">
+
+      <p>{{ oldValue }} </p>
+      <p>{{ newValue }} </p>
+    </div>
+    <div>
+      <p (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()"
+      [class.highlight]= "isMouseOver">Is mouse over? {{ isMouseOver }}</p>
+    </div>
+  </article>
+</section>
+<br><br>
+
 <section class="property-binding">
   <article>
     <h3>Class and Style Binding</h3>
